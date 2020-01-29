@@ -13,4 +13,9 @@ R = math.pow( (math.pow(n1,2*N) - (n0/n3)*math.pow(n2, 2*N)) / ((math.pow(n1,2*N
 # bw/wl = (4/math.pi)*math.arcsin( (n1-n2) / (n1+n2) )
 # it follows that 
   # x = math.sin(math.pi*bw/(4*wl))
-  # n2 = n1*(1-x)/(1+x)
+  # n2 = n1*(1-x)/(1+x)\
+  
+  # Note that at 1550nm both GaInAs and GaInAsP have a relatively flat characteristic
+  # Say n1 = 3.5243, GaInAs
+  #     n2 = 3.257, GaInAsP
+  # See refractiveindex.info
