@@ -11,3 +11,6 @@ n2 = 1.21	# Refractive index of second layer
 R = math.pow( (math.pow(n1,2*N) - (n0/n3)*math.pow(n2, 2*N)) / ((math.pow(n1,2*N) - (n0/n3)*math.pow(n2, 2*N))) ,2)
 
 # bw/wl = (4/math.pi)*math.arcsin( (n1-n2) / (n1+n2) )
+# it follows that 
+  # x = math.sin(math.pi*bw/(4*wl))
+  # n2 = n1*(1-x)/(1+x)
