@@ -12,8 +12,8 @@ r = 0.9
 phi = math.pi/4
 scaling = 0.5
 
-b_coeff = [1]
-a_coeff = [1, 2*r*math.cos(phi), -r*r]
+b_coeff = np.convolve([1, 1],[1, 1])
+a_coeff = np.convolve([1,0.9],[1,0.9])
 
 coeff_file = r"C:\Users\graison\PycharmProjects\FPGAFilterCalculator\output.v"  # File to store the Verilog coefficients to
 ## SHOULDN'T NEED TO CHANGE ANYTHING ELSE ##
