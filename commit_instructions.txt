@@ -1,0 +1,4 @@
+1) "git add --all" to stage all current files
+2) git checkout
+3) git commit -m "Message for the commit of currently staged files"
+4) git push
