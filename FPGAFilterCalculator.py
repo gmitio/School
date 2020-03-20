@@ -12,11 +12,15 @@ r = 0.9
 phi = math.pi/4
 scaling = 1
 
+<<<<<<< HEAD
 #a_coeff = [1]
 b_coeff = [1, -1, 1]
 #b_coeff = [1]
 a_coeff = [1, 1.1314, -0.64]	# Use MATLAB freqz() style for these coefficients
 coeff_file = r"C:\Users\graison\PycharmProjects\FPGAFilterCalculator\output.v"  # File to store the Verilog coefficients to
+=======
+coeff_file = r"output.v"  # File to store the Verilog coefficients to
+>>>>>>> ba379e3c21e7e572eec7785ef25677c813f9d1ab
 ## SHOULDN'T NEED TO CHANGE ANYTHING ELSE ##
 
 

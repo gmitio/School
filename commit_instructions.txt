@@ -3,3 +3,7 @@ COMMITTING TO THE GITHUB REPO:
 1) "git add --all" to stage all current files
 2) git commit -m "Message for the commit of currently staged files"
 3) git push
+
+PULLING FROM THE GITHUB REPO:
+
+1) "git pull"
