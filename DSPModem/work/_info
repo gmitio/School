@@ -1,0 +1,367 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/graison/Desktop/Deliverable4
+vawgn_generator
+Z0 !s110 1618093982
+!i10b 1
+!s100 Fb<Lm9YkDGmg9AaEcG>K=2
+I1FG;0f6_hiQzHEh2?Z6hP2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/graison/School/DSPModem
+Z3 w1617784945
+8C:/Users/graison/School/DSPModem/awgn_generator.v
+FC:/Users/graison/School/DSPModem/awgn_generator.v
+L0 35
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1618093981.000000
+!s107 C:/Users/graison/School/DSPModem/awgn_generator.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/awgn_generator.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vchannel
+R0
+!i10b 1
+!s100 h_mKXHiZ62=mg9[2e[f_k3
+If7Ka`_NJ:nd>7d2acZiCB2
+R1
+R2
+w1617944666
+8C:/Users/graison/School/DSPModem/channel.v
+FC:/Users/graison/School/DSPModem/channel.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z7 !s108 1618093982.000000
+!s107 C:/Users/graison/School/DSPModem/channel.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/channel.v|
+!i113 1
+R5
+R6
+vclk_enable_gen
+R0
+!i10b 1
+!s100 Z1@giNV9bcV6JLok?iFF[3
+I8h<;[kTBB[;EKlAAI_[FO2
+R1
+R2
+w1613630915
+8C:/Users/graison/School/DSPModem/clk_enable_gen.v
+FC:/Users/graison/School/DSPModem/clk_enable_gen.v
+L0 1
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/clk_enable_gen.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/clk_enable_gen.v|
+!i113 1
+R5
+R6
+vdownsampler
+R0
+!i10b 1
+!s100 gZ2XZE04i79iYLmYN[@Jm2
+IK7?bE>?0Q;>dY`?j<8LU^2
+R1
+R2
+w1617943038
+8C:/Users/graison/School/DSPModem/downsampler.v
+FC:/Users/graison/School/DSPModem/downsampler.v
+L0 2
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/downsampler.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/downsampler.v|
+!i113 1
+R5
+R6
+vdual_port_rom_awgn
+R0
+!i10b 1
+!s100 KN<CRIXmFzfPbz@TgZIL@0
+IdGe@l]XUSmjRIaI[HJIh60
+R1
+R2
+R3
+8C:/Users/graison/School/DSPModem/dual_port_rom_awgn.v
+FC:/Users/graison/School/DSPModem/dual_port_rom_awgn.v
+L0 4
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/dual_port_rom_awgn.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/dual_port_rom_awgn.v|
+!i113 1
+R5
+R6
+vlfsr
+R0
+!i10b 1
+!s100 m1M=oe9hnHaOD=L``LWQW2
+IIc3dlh:W<geFhB_dmfGeK3
+R1
+R2
+w1618090532
+8C:/Users/graison/School/DSPModem/lfsr.v
+FC:/Users/graison/School/DSPModem/lfsr.v
+L0 1
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/lfsr.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/lfsr.v|
+!i113 1
+R5
+R6
+vlfsr_short
+R0
+!i10b 1
+!s100 Ul0S>nXmQFmFE;l@3oP9n2
+IS2A5oFBcT2XXA`Q^bF0[h1
+R1
+R2
+w1617865847
+8C:/Users/graison/School/DSPModem/lfsr_short.v
+FC:/Users/graison/School/DSPModem/lfsr_short.v
+L0 1
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/lfsr_short.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/lfsr_short.v|
+!i113 1
+R5
+R6
+vmapper
+R0
+!i10b 1
+!s100 lK[UbnQUd=VdkTbF0X:zW1
+I75IiiL@dz:jQHM_FODGf32
+R1
+R2
+w1614223378
+8C:/Users/graison/School/DSPModem/mapper.v
+FC:/Users/graison/School/DSPModem/mapper.v
+L0 1
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/graison/School/DSPModem/mapper.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/mapper.v|
+!i113 1
+R5
+R6
+vmatched_filter_grm011
+R0
+!i10b 1
+!s100 KjW2?SNDhdB?hnI7L4zDC1
+IY]QNBQlP5kMBYMZAPoUPQ1
+R1
+R2
+Z8 w1617784998
+Z9 8C:/Users/graison/School/DSPModem/matched_filter_grm011.v
+Z10 FC:/Users/graison/School/DSPModem/matched_filter_grm011.v
+L0 60
+R4
+r1
+!s85 0
+31
+R7
+Z11 !s107 C:/Users/graison/School/DSPModem/matched_filter_grm011.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/matched_filter_grm011.v|
+!i113 1
+R5
+R6
+vmodem_testbench
+Z13 !s110 1618093983
+!i10b 1
+!s100 Zaf`9K60aX>Loe^QF3fLO0
+IRlh@JPGEWfV<:gMC<^XlN2
+R1
+R2
+w1618090495
+8C:/Users/graison/School/DSPModem/modem_testbench.v
+FC:/Users/graison/School/DSPModem/modem_testbench.v
+L0 4
+R4
+r1
+!s85 0
+31
+Z14 !s108 1618093983.000000
+!s107 C:/Users/graison/School/DSPModem/modem_testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/modem_testbench.v|
+!i113 1
+R5
+R6
+vps_filter_practical
+R13
+!i10b 1
+!s100 n1lg`VzaVTOm^^n@=zQl=1
+I:0nGlaOF6<@V0YCB4CXdO0
+R1
+R2
+w1618091739
+8C:/Users/graison/School/DSPModem/ps_filter_practical.v
+FC:/Users/graison/School/DSPModem/ps_filter_practical.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/ps_filter_practical.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/ps_filter_practical.v|
+!i113 1
+R5
+R6
+vreceiver
+R13
+!i10b 1
+!s100 W9<>0`ahI^fOEMKi^ZB942
+I;O8m@<A3XW;Th5BaS:lZ01
+R1
+R2
+w1618092294
+8C:/Users/graison/School/DSPModem/receiver.v
+FC:/Users/graison/School/DSPModem/receiver.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/receiver.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/receiver.v|
+!i113 1
+R5
+R6
+vreference_measure
+R13
+!i10b 1
+!s100 k5i`c7l4jZPUkAoIke7j=3
+IJk<_Sf_^H^Qda5DEK:80J1
+R1
+R2
+w1618092282
+8C:/Users/graison/School/DSPModem/reference_measure.v
+FC:/Users/graison/School/DSPModem/reference_measure.v
+L0 3
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/reference_measure.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/reference_measure.v|
+!i113 1
+R5
+R6
+vshared_multiplier
+R0
+!i10b 1
+!s100 5W>Via6IiE1aHZeCH<6c61
+I]D<nl=]b9aZmS>f7[X@Nd0
+R1
+R2
+R8
+R9
+R10
+L0 3
+R4
+r1
+!s85 0
+31
+R7
+R11
+R12
+!i113 1
+R5
+R6
+vslicer
+R13
+!i10b 1
+!s100 faSCC=<b2kLEcH;bTGh1?2
+Ic@f]e^Vh50j]`ejldzPYj2
+R1
+R2
+w1614221990
+8C:/Users/graison/School/DSPModem/slicer.v
+FC:/Users/graison/School/DSPModem/slicer.v
+L0 3
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/slicer.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/slicer.v|
+!i113 1
+R5
+R6
+vtransmitter
+R13
+!i10b 1
+!s100 _Y;F_d3ghF:[Q;e68iP=H1
+IkYllMd27c2KnfZDF[Yla02
+R1
+R2
+w1618092270
+8C:/Users/graison/School/DSPModem/transmitter.v
+FC:/Users/graison/School/DSPModem/transmitter.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/transmitter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/transmitter.v|
+!i113 1
+R5
+R6
+vupsampler
+R13
+!i10b 1
+!s100 JYW9beZ][bfz?A5XE4A?W0
+IG^:mE:7K]F31>U7Dh]b]i3
+R1
+R2
+w1617942615
+8C:/Users/graison/School/DSPModem/upsampler.v
+FC:/Users/graison/School/DSPModem/upsampler.v
+L0 2
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/graison/School/DSPModem/upsampler.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/graison/School/DSPModem/upsampler.v|
+!i113 1
+R5
+R6
