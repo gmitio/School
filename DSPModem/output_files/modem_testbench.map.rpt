@@ -1,0 +1,1218 @@
+Analysis & Synthesis report for modem_testbench
+Sat Apr 10 16:08:29 2021
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis IP Cores Summary
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Source assignments for switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst
+ 13. Source assignments for key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst
+ 14. Parameter Settings for User Entity Instance: transmitter:tx_sys|upsampler:upsamp_i
+ 15. Parameter Settings for User Entity Instance: transmitter:tx_sys|upsampler:upsamp_q
+ 16. Parameter Settings for User Entity Instance: channel:ch_sys|awgn_generator:noise_gen|dual_port_rom_awgn:awgn_rom_inst_1
+ 17. Parameter Settings for User Entity Instance: receiver:rx_sys|downsampler:downsampler_i
+ 18. Parameter Settings for User Entity Instance: receiver:rx_sys|downsampler:downsampler_q
+ 19. Parameter Settings for User Entity Instance: receiver:rx_sys|matched_filter_grm011:matched_filt_i
+ 20. Parameter Settings for User Entity Instance: receiver:rx_sys|matched_filter_grm011:matched_filt_q
+ 21. Parameter Settings for User Entity Instance: receiver:rx_sys|reference_measure:ref_lev
+ 22. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0
+ 23. Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 24. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0
+ 25. Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl
+ 26. Parameter Settings for User Entity Instance: KeyCCT:k0
+ 27. Parameter Settings for User Entity Instance: KeyCCT:k1
+ 28. Parameter Settings for User Entity Instance: KeyCCT:k2
+ 29. Parameter Settings for User Entity Instance: KeyCCT:k3
+ 30. Port Connectivity Checks: "KeyCCT:k3"
+ 31. Port Connectivity Checks: "KeyCCT:k2"
+ 32. Port Connectivity Checks: "KeyCCT:k1"
+ 33. Port Connectivity Checks: "KeyCCT:k0"
+ 34. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 35. Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
+ 36. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"
+ 37. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0"
+ 38. Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst"
+ 39. Port Connectivity Checks: "receiver:rx_sys|reference_measure:ref_lev"
+ 40. Port Connectivity Checks: "receiver:rx_sys"
+ 41. Port Connectivity Checks: "channel:ch_sys|awgn_generator:noise_gen"
+ 42. Port Connectivity Checks: "transmitter:tx_sys|ps_filter_practical:tx_filt_q"
+ 43. Port Connectivity Checks: "transmitter:tx_sys|ps_filter_practical:tx_filt_i"
+ 44. Port Connectivity Checks: "lfsr:lfsr_q"
+ 45. Port Connectivity Checks: "lfsr:lfsr_i"
+ 46. Post-Synthesis Netlist Statistics for Top Partition
+ 47. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
+ 48. Elapsed Time Per Partition
+ 49. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Apr 10 16:08:29 2021           ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
+; Revision Name                      ; modem_testbench                                 ;
+; Top-level Entity Name              ; modem_testbench                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 336                                             ;
+;     Total combinational functions  ; 318                                             ;
+;     Dedicated logic registers      ; 219                                             ;
+; Total registers                    ; 219                                             ;
+; Total pins                         ; 110                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; modem_testbench    ; modem_testbench    ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                             ;
++--------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------+
+; File Name with User-Entered Path                                                                 ; Used in Netlist ; File Type                                    ; File Name with Absolute Path                                                                             ; Library             ;
++--------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------+
+; KeyCCT.v                                                                                         ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/KeyCCT.v                                                           ;                     ;
+; upsampler.v                                                                                      ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/upsampler.v                                                        ;                     ;
+; transmitter.v                                                                                    ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/transmitter.v                                                      ;                     ;
+; slicer.v                                                                                         ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/slicer.v                                                           ;                     ;
+; reference_measure.v                                                                              ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/reference_measure.v                                                ;                     ;
+; receiver.v                                                                                       ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/receiver.v                                                         ;                     ;
+; ps_filter_practical.v                                                                            ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/ps_filter_practical.v                                              ;                     ;
+; modem_testbench.v                                                                                ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/modem_testbench.v                                                  ;                     ;
+; matched_filter_grm011.v                                                                          ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v                                            ;                     ;
+; mapper.v                                                                                         ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/mapper.v                                                           ;                     ;
+; lfsr.v                                                                                           ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/lfsr.v                                                             ;                     ;
+; dual_port_rom_awgn.v                                                                             ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/dual_port_rom_awgn.v                                               ;                     ;
+; downsampler.v                                                                                    ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/downsampler.v                                                      ;                     ;
+; clk_enable_gen.v                                                                                 ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/clk_enable_gen.v                                                   ;                     ;
+; channel.v                                                                                        ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/channel.v                                                          ;                     ;
+; awgn_generator.v                                                                                 ; yes             ; User Verilog HDL File                        ; /home/grm011/engr-ece/School/DSPModem/awgn_generator.v                                                   ;                     ;
+; /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v ; yes             ; Auto-Found Verilog HDL File                  ; /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v         ; switch_led_emulator ;
+; /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/switch_led_emulator.v            ; yes             ; Auto-Found Verilog HDL File                  ; /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/switch_led_emulator.v                    ; switch_led_emulator ;
+; /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/key_emulator.v                          ; yes             ; Auto-Found Verilog HDL File                  ; /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/key_emulator.v                                  ; key_emulator        ;
+; /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v        ; yes             ; Auto-Found Verilog HDL File                  ; /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v                ; key_emulator        ;
+; awgn_data.txt                                                                                    ; yes             ; Auto-Found File                              ; /home/grm011/engr-ece/School/DSPModem/awgn_data.txt                                                      ;                     ;
+; altsource_probe.v                                                                                ; yes             ; Megafunction                                 ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe.v                                    ;                     ;
+; sld_jtag_endpoint_adapter.vhd                                                                    ; yes             ; Encrypted Megafunction                       ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd                        ;                     ;
+; sld_jtag_endpoint_adapter_impl.sv                                                                ; yes             ; Encrypted Megafunction                       ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter_impl.sv                    ;                     ;
+; altsource_probe_body.vhd                                                                         ; yes             ; Megafunction                                 ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe_body.vhd                             ;                     ;
+; sld_rom_sr.vhd                                                                                   ; yes             ; Encrypted Megafunction                       ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_rom_sr.vhd                                       ;                     ;
+; sld_hub.vhd                                                                                      ; yes             ; Encrypted Megafunction                       ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_hub.vhd                                          ; altera_sld          ;
+; db/ip/sld35871a27/alt_sld_fab.v                                                                  ; yes             ; Encrypted Auto-Found Verilog HDL File        ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/alt_sld_fab.v                                    ; alt_sld_fab         ;
+; db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab.v                                           ; yes             ; Encrypted Auto-Found Verilog HDL File        ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab.v             ; alt_sld_fab         ;
+; db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_ident.sv                                    ; yes             ; Auto-Found SystemVerilog HDL File            ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_ident.sv      ; alt_sld_fab         ;
+; db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_presplit.sv                                 ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_presplit.sv   ; alt_sld_fab         ;
+; db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd                               ; yes             ; Encrypted Auto-Found VHDL File               ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd ; alt_sld_fab         ;
+; db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_splitter.sv                                 ; yes             ; Encrypted Auto-Found SystemVerilog HDL File  ; /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_splitter.sv   ; alt_sld_fab         ;
+; sld_jtag_hub.vhd                                                                                 ; yes             ; Encrypted Megafunction                       ; /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd                                     ;                     ;
++--------------------------------------------------------------------------------------------------+-----------------+----------------------------------------------+----------------------------------------------------------------------------------------------------------+---------------------+
+
+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 336                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 318                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 198                      ;
+;     -- 3 input functions                    ; 77                       ;
+;     -- <=2 input functions                  ; 43                       ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 310                      ;
+;     -- arithmetic mode                      ; 8                        ;
+;                                             ;                          ;
+; Total registers                             ; 219                      ;
+;     -- Dedicated logic registers            ; 219                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 110                      ;
+;                                             ;                          ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 245                      ;
+; Total fan-out                               ; 1901                     ;
+; Average fan-out                             ; 2.48                     ;
++---------------------------------------------+--------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------------+
+; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                                         ; Entity Name                       ; Library Name        ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------------+
+; |modem_testbench                                                                                                                        ; 318 (2)             ; 219 (0)                   ; 0           ; 0            ; 0       ; 0         ; 110  ; 0            ; |modem_testbench                                                                                                                                                                                                                                                                                                                                            ; modem_testbench                   ; work                ;
+;    |key_emulator:key_emulator_inst|                                                                                                     ; 35 (0)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst                                                                                                                                                                                                                                                                                                             ; key_emulator                      ; key_emulator        ;
+;       |altsource_probe_top:in_system_sources_probes_0|                                                                                  ; 35 (0)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                              ; altsource_probe_top               ; key_emulator        ;
+;          |altsource_probe:issp_impl|                                                                                                    ; 35 (0)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                                    ; altsource_probe                   ; work                ;
+;             |altsource_probe_body:altsource_probe_body_inst|                                                                            ; 35 (3)              ; 17 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                                     ; altsource_probe_body              ; work                ;
+;                |altsource_probe_impl:\wider_source_gen:wider_source_inst|                                                               ; 32 (14)             ; 17 (9)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst                                                                                                                            ; altsource_probe_impl              ; work                ;
+;                   |sld_rom_sr:\instance_id_gen:rom_info_inst|                                                                           ; 18 (18)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst                                                                                  ; sld_rom_sr                        ; work                ;
+;    |sld_hub:auto_hub|                                                                                                                   ; 156 (1)             ; 93 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                           ; sld_hub                           ; altera_sld          ;
+;       |alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric| ; 155 (0)             ; 93 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric                                                                                                                                                                                           ; alt_sld_fab_with_jtag_input       ; altera_sld          ;
+;          |alt_sld_fab:instrumentation_fabric|                                                                                           ; 155 (0)             ; 93 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                                                                                        ; alt_sld_fab                       ; alt_sld_fab         ;
+;             |alt_sld_fab_alt_sld_fab:alt_sld_fab|                                                                                       ; 155 (1)             ; 93 (6)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                                                                                                    ; alt_sld_fab_alt_sld_fab           ; alt_sld_fab         ;
+;                |alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|                                                                            ; 154 (0)             ; 87 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric                                                                        ; alt_sld_fab_alt_sld_fab_sldfabric ; alt_sld_fab         ;
+;                   |sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|                                                                        ; 154 (112)           ; 87 (59)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub                           ; sld_jtag_hub                      ; work                ;
+;                      |sld_rom_sr:hub_info_reg|                                                                                          ; 24 (24)             ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg   ; sld_rom_sr                        ; work                ;
+;                      |sld_shadow_jsm:shadow_jsm|                                                                                        ; 18 (18)             ; 19 (19)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_shadow_jsm:shadow_jsm ; sld_shadow_jsm                    ; altera_sld          ;
+;    |switch_led_emulator:switch_led_emulator_inst|                                                                                       ; 125 (0)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst                                                                                                                                                                                                                                                                                               ; switch_led_emulator               ; switch_led_emulator ;
+;       |altsource_probe_top:in_system_sources_probes_0|                                                                                  ; 125 (0)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0                                                                                                                                                                                                                                                ; altsource_probe_top               ; switch_led_emulator ;
+;          |altsource_probe:issp_impl|                                                                                                    ; 125 (0)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl                                                                                                                                                                                                                      ; altsource_probe                   ; work                ;
+;             |altsource_probe_body:altsource_probe_body_inst|                                                                            ; 125 (3)             ; 109 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst                                                                                                                                                                       ; altsource_probe_body              ; work                ;
+;                |altsource_probe_impl:\equal_width_gen:equal_width_inst|                                                                 ; 122 (105)           ; 109 (101)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst                                                                                                                ; altsource_probe_impl              ; work                ;
+;                   |sld_rom_sr:\instance_id_gen:rom_info_inst|                                                                           ; 17 (17)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst                                                                      ; sld_rom_sr                        ; work                ;
++-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+---------------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                                                                                                                                                                                                                                                                                    ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+; Vendor ; IP Core Name                    ; Version ; Release Date ; License Type ; Entity Instance                                                                                                                                                                                                                                                                      ; IP Include File                                                ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric                                                                                 ;                                                                ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab                                             ;                                                                ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_presplit:presplit   ;                                                                ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric ;                                                                ;
+; Altera ; Signal Tap                      ; N/A     ; N/A          ; Licensed     ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_splitter:splitter   ;                                                                ;
+; N/A    ; altera_in_system_sources_probes ; 20.1    ; N/A          ; N/A          ; |modem_testbench|key_emulator:key_emulator_inst                                                                                                                                                                                                                                      ; /home/grm011/engr-ece/School/DSPModem/key_emulator.qsys        ;
+; N/A    ; altera_in_system_sources_probes ; 20.1    ; N/A          ; N/A          ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst                                                                                                                                                                                                                        ; /home/grm011/engr-ece/School/DSPModem/switch_led_emulator.qsys ;
++--------+---------------------------------+---------+--------------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 219   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 14    ;
+; Number of registers using Asynchronous Clear ; 96    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 133   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                                                                                                                                                                              ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                                                                                                                                                                               ; Fan out ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[2] ; 2       ;
+; sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|jtag_ir_reg[1] ; 3       ;
+; Total number of inverted registers = 2                                                                                                                                                                                                                                                                                          ;         ;
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|shift_reg[1]                                                                                                                             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[0]                                                                    ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|word_counter[1]                                                                                ;
+; 5:1                ; 50 bits   ; 150 LEs       ; 100 LEs              ; 50 LEs                 ; Yes        ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|shift_reg[49]                                                                                                                ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 32 LEs               ; 12 LEs                 ; Yes        ; |modem_testbench|switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[3]                                                                         ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |modem_testbench|key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst|sld_rom_sr:\instance_id_gen:rom_info_inst|WORD_SR[3]                                                                                     ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[1][3]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][3]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[3]                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][0]                           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][2]                           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[3] ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[3]                             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 52 LEs               ; 36 LEs                 ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[3]                      ;
+; 28:1               ; 4 bits    ; 72 LEs        ; 48 LEs               ; 24 LEs                 ; Yes        ; |modem_testbench|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                                                                                ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                                                                                                                                                                                 ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                                                                                                                                                                                 ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                                                                                 ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[0]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[49]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[48]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[47]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[46]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[45]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[44]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[43]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[42]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[41]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[40]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[39]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[38]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[37]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[36]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[35]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[34]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[33]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[32]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[31]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[30]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[29]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[28]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[27]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[26]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[25]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[24]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[23]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[22]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[21]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[20]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[19]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[18]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[17]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[16]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[15]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[14]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[13]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[12]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[11]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[10]                                                                                                                                                                                      ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[9]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[8]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[7]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[6]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[5]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[4]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[3]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[2]                                                                                                                                                                                       ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[1]                                                                                                                                                                                       ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assignment                      ; Value ; From ; To                                                                                                                                                                                    ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; NOT_GATE_PUSH_BACK              ; OFF   ; -    ; -                                                                                                                                                                                     ;
+; POWER_UP_LEVEL                  ; LOW   ; -    ; -                                                                                                                                                                                     ;
+; AUTO_SHIFT_REGISTER_RECOGNITION ; OFF   ; -    ; -                                                                                                                                                                                     ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[0]                                                                                                                                                                           ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[3]                                                                                                                                                                           ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[2]                                                                                                                                                                           ;
+; AUTO_CLOCK_ENABLE_RECOGNITION   ; OFF   ; -    ; hold_reg[1]                                                                                                                                                                           ;
++---------------------------------+-------+------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: transmitter:tx_sys|upsampler:upsamp_i ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 20    ; Signed Integer                                            ;
+; N_BY_4         ; 5     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: transmitter:tx_sys|upsampler:upsamp_q ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; N              ; 20    ; Signed Integer                                            ;
+; N_BY_4         ; 5     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: channel:ch_sys|awgn_generator:noise_gen|dual_port_rom_awgn:awgn_rom_inst_1 ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                           ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+; DATA_WIDTH     ; 18    ; Signed Integer                                                                                 ;
+; ADDR_WIDTH     ; 12    ; Signed Integer                                                                                 ;
++----------------+-------+------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: receiver:rx_sys|downsampler:downsampler_i ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; N              ; 20    ; Signed Integer                                                ;
+; N_BY_4         ; 5     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: receiver:rx_sys|downsampler:downsampler_q ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; N              ; 20    ; Signed Integer                                                ;
+; N_BY_4         ; 5     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: receiver:rx_sys|matched_filter_grm011:matched_filt_i ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 113   ; Signed Integer                                                           ;
+; N_2            ; 57    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: receiver:rx_sys|matched_filter_grm011:matched_filt_q ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; N              ; 113   ; Signed Integer                                                           ;
+; N_2            ; 57    ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: receiver:rx_sys|reference_measure:ref_lev ;
++------------------+-------+-------------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                        ;
++------------------+-------+-------------------------------------------------------------+
+; BITS_ACCUMULATED ; 16    ; Signed Integer                                              ;
++------------------+-------+-------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0 ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                                         ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                                       ;
+; lpm_hint                ; UNUSED          ; String                                                                                       ;
+; sld_auto_instance_index ; YES             ; String                                                                                       ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                               ;
+; sld_node_info_parameter ; 4746752         ; Signed Integer                                                                               ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                               ;
+; instance_id             ; SW              ; String                                                                                       ;
+; probe_width             ; 50              ; Signed Integer                                                                               ;
+; source_width            ; 50              ; Signed Integer                                                                               ;
+; source_initial_value    ; 0               ; String                                                                                       ;
+; enable_metastability    ; NO              ; String                                                                                       ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl ;
++-------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                                                                   ;
++-------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                                                                 ;
+; lpm_hint                ; UNUSED          ; String                                                                                                                 ;
+; sld_auto_instance_index ; YES             ; String                                                                                                                 ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                                                         ;
+; SLD_NODE_INFO           ; 4746752         ; Signed Integer                                                                                                         ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                                                         ;
+; instance_id             ; SW              ; String                                                                                                                 ;
+; probe_width             ; 50              ; Signed Integer                                                                                                         ;
+; source_width            ; 50              ; Signed Integer                                                                                                         ;
+; source_initial_value    ; 0               ; String                                                                                                                 ;
+; enable_metastability    ; NO              ; String                                                                                                                 ;
++-------------------------+-----------------+------------------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0 ;
++-------------------------+-----------------+--------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                           ;
++-------------------------+-----------------+--------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                         ;
+; lpm_hint                ; UNUSED          ; String                                                                         ;
+; sld_auto_instance_index ; YES             ; String                                                                         ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                 ;
+; sld_node_info_parameter ; 4746752         ; Signed Integer                                                                 ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                 ;
+; instance_id             ; KEYS            ; String                                                                         ;
+; probe_width             ; 0               ; Signed Integer                                                                 ;
+; source_width            ; 4               ; Signed Integer                                                                 ;
+; source_initial_value    ; F               ; String                                                                         ;
+; enable_metastability    ; NO              ; String                                                                         ;
++-------------------------+-----------------+--------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------------------+
+; Parameter Name          ; Value           ; Type                                                                                                     ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------------------+
+; lpm_type                ; altsource_probe ; String                                                                                                   ;
+; lpm_hint                ; UNUSED          ; String                                                                                                   ;
+; sld_auto_instance_index ; YES             ; String                                                                                                   ;
+; sld_instance_index      ; 0               ; Signed Integer                                                                                           ;
+; SLD_NODE_INFO           ; 4746752         ; Signed Integer                                                                                           ;
+; sld_ir_width            ; 4               ; Signed Integer                                                                                           ;
+; instance_id             ; KEYS            ; String                                                                                                   ;
+; probe_width             ; 0               ; Signed Integer                                                                                           ;
+; source_width            ; 4               ; Signed Integer                                                                                           ;
+; source_initial_value    ; F               ; String                                                                                                   ;
+; enable_metastability    ; NO              ; String                                                                                                   ;
++-------------------------+-----------------+----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyCCT:k0 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; PERSIST        ; 1     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyCCT:k1 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; PERSIST        ; 1     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyCCT:k2 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; PERSIST        ; 1     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: KeyCCT:k3 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; PERSIST        ; 1     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyCCT:k3"                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; key_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyCCT:k2"                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; key_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyCCT:k1"                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; key_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "KeyCCT:k0"                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; key_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"                                                ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; raw_tck         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tdi             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; usr1            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_sdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_e1dr ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_udr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_uir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_tlr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ena             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_in           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_out          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; tdo             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0"                                                                    ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; source_ena ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
+; probe      ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; source_clk ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl"                                  ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                      ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; raw_tck         ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; tdi             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; usr1            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_sdr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_e1dr ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_udr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_cir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_uir  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; jtag_state_tlr  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; clr             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ena             ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_in           ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; ir_out          ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
+; tdo             ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++-----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0"                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; source_ena ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
+; source_clk ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "switch_led_emulator:switch_led_emulator_inst"                                         ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; source ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; probe  ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "receiver:rx_sys|reference_measure:ref_lev"                                                                ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                       ; Type   ; Severity ; Details                                                                             ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; mapper_output_power_i      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; mapper_output_power_q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; accumulated_square_error_i ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; accumulated_square_error_q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "receiver:rx_sys"                                                                          ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; syms_out_i ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; syms_out_q ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------+
+; Port Connectivity Checks: "channel:ch_sys|awgn_generator:noise_gen" ;
++--------+-------+----------+-----------------------------------------+
+; Port   ; Type  ; Severity ; Details                                 ;
++--------+-------+----------+-----------------------------------------+
+; clk_en ; Input ; Info     ; Stuck at GND                            ;
++--------+-------+----------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "transmitter:tx_sys|ps_filter_practical:tx_filt_q"                                                                                              ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; delay   ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
+; reg_clr ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "transmitter:tx_sys|ps_filter_practical:tx_filt_i"                                                                                              ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                      ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; delay   ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
+; reg_clr ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++---------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lfsr:lfsr_q"                                                                                                 ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                  ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rollover ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; lfsr_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "lfsr:lfsr_i"                                                                                                   ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                                                  ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; rollover   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
+; lfsr_out_q ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 152                         ;
+; cycloneiii_ff         ; 126                         ;
+;     CLR               ; 2                           ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 16                          ;
+;     ENA CLR           ; 53                          ;
+;     plain             ; 54                          ;
+; cycloneiii_lcell_comb ; 161                         ;
+;     normal            ; 161                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 23                          ;
+;         4 data inputs ; 134                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.00                        ;
+; Average LUT depth     ; 1.62                        ;
++-----------------------+-----------------------------+
+
+
++------------------------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
++-----------------------+------------------------------------------+
+; Type                  ; Count                                    ;
++-----------------------+------------------------------------------+
+; boundary_port         ; 149                                      ;
+; cycloneiii_ff         ; 93                                       ;
+;     CLR               ; 6                                        ;
+;     ENA               ; 16                                       ;
+;     ENA CLR           ; 30                                       ;
+;     ENA CLR SLD       ; 4                                        ;
+;     ENA SCLR          ; 5                                        ;
+;     ENA SLD           ; 9                                        ;
+;     SCLR              ; 7                                        ;
+;     plain             ; 16                                       ;
+; cycloneiii_lcell_comb ; 156                                      ;
+;     arith             ; 8                                        ;
+;         2 data inputs ; 8                                        ;
+;     normal            ; 148                                      ;
+;         0 data inputs ; 1                                        ;
+;         1 data inputs ; 6                                        ;
+;         2 data inputs ; 23                                       ;
+;         3 data inputs ; 54                                       ;
+;         4 data inputs ; 64                                       ;
+;                       ;                                          ;
+; Max LUT depth         ; 4.00                                     ;
+; Average LUT depth     ; 1.94                                     ;
++-----------------------+------------------------------------------+
+
+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:01     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
+    Info: Processing started: Sat Apr 10 16:07:47 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSPModem -c modem_testbench
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12248): Elaborating Platform Designer system entity "switch_led_emulator.qsys"
+Info (12250): 2021.04.10.16:07:59 Progress: Loading DSPModem/switch_led_emulator.qsys
+Info (12250): 2021.04.10.16:08:00 Progress: Reading input file
+Info (12250): 2021.04.10.16:08:00 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
+Info (12250): 2021.04.10.16:08:00 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2021.04.10.16:08:00 Progress: Building connections
+Info (12250): 2021.04.10.16:08:00 Progress: Parameterizing connections
+Info (12250): 2021.04.10.16:08:00 Progress: Validating
+Info (12250): 2021.04.10.16:08:01 Progress: Done reading input file
+Info (12250): Switch_led_emulator: Generating switch_led_emulator "switch_led_emulator" for QUARTUS_SYNTH
+Info (12250): In_system_sources_probes_0: "switch_led_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info (12250): Switch_led_emulator: Done "switch_led_emulator" with 2 modules, 2 files
+Info (12249): Finished elaborating Platform Designer system entity "switch_led_emulator.qsys"
+Info (12248): Elaborating Platform Designer system entity "key_emulator.qsys"
+Info (12250): 2021.04.10.16:08:06 Progress: Loading DSPModem/key_emulator.qsys
+Info (12250): 2021.04.10.16:08:06 Progress: Reading input file
+Info (12250): 2021.04.10.16:08:06 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
+Info (12250): 2021.04.10.16:08:06 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2021.04.10.16:08:06 Progress: Building connections
+Info (12250): 2021.04.10.16:08:06 Progress: Parameterizing connections
+Info (12250): 2021.04.10.16:08:07 Progress: Validating
+Info (12250): 2021.04.10.16:08:07 Progress: Done reading input file
+Info (12250): Key_emulator: Generating key_emulator "key_emulator" for QUARTUS_SYNTH
+Info (12250): In_system_sources_probes_0: "key_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info (12250): Key_emulator: Done "key_emulator" with 2 modules, 2 files
+Info (12249): Finished elaborating Platform Designer system entity "key_emulator.qsys"
+Info (12021): Found 1 design units, including 1 entities, in source file KeyCCT.v
+    Info (12023): Found entity 1: KeyCCT File: /home/grm011/engr-ece/School/DSPModem/KeyCCT.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file upsampler.v
+    Info (12023): Found entity 1: upsampler File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file transmitter.v
+    Info (12023): Found entity 1: transmitter File: /home/grm011/engr-ece/School/DSPModem/transmitter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file slicer.v
+    Info (12023): Found entity 1: slicer File: /home/grm011/engr-ece/School/DSPModem/slicer.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file reference_measure.v
+    Info (12023): Found entity 1: reference_measure File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file receiver.v
+    Info (12023): Found entity 1: receiver File: /home/grm011/engr-ece/School/DSPModem/receiver.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ps_filter_practical.v
+    Info (12023): Found entity 1: ps_filter_practical File: /home/grm011/engr-ece/School/DSPModem/ps_filter_practical.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modem_testbench.v
+    Info (12023): Found entity 1: modem_testbench File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 4
+Info (12021): Found 2 design units, including 2 entities, in source file matched_filter_grm011.v
+    Info (12023): Found entity 1: shared_multiplier File: /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v Line: 3
+    Info (12023): Found entity 2: matched_filter_grm011 File: /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v Line: 60
+Info (12021): Found 1 design units, including 1 entities, in source file lfsr_short.v
+    Info (12023): Found entity 1: lfsr_short File: /home/grm011/engr-ece/School/DSPModem/lfsr_short.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mapper.v
+    Info (12023): Found entity 1: mapper File: /home/grm011/engr-ece/School/DSPModem/mapper.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lfsr.v
+    Info (12023): Found entity 1: lfsr File: /home/grm011/engr-ece/School/DSPModem/lfsr.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file dual_port_rom_awgn.v
+    Info (12023): Found entity 1: dual_port_rom_awgn File: /home/grm011/engr-ece/School/DSPModem/dual_port_rom_awgn.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file downsampler.v
+    Info (12023): Found entity 1: downsampler File: /home/grm011/engr-ece/School/DSPModem/downsampler.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file clk_enable_gen.v
+    Info (12023): Found entity 1: clk_enable_gen File: /home/grm011/engr-ece/School/DSPModem/clk_enable_gen.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file channel.v
+    Info (12023): Found entity 1: channel File: /home/grm011/engr-ece/School/DSPModem/channel.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file awgn_generator.v
+    Info (12023): Found entity 1: awgn_generator File: /home/grm011/engr-ece/School/DSPModem/awgn_generator.v Line: 35
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/submodules/altsource_probe_top.v
+    Info (12023): Found entity 1: altsource_probe_top File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/switch_led_emulator/switch_led_emulator.v
+    Info (12023): Found entity 1: switch_led_emulator File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/switch_led_emulator.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/key_emulator/key_emulator.v
+    Info (12023): Found entity 1: key_emulator File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/key_emulator.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/key_emulator/submodules/altsource_probe_top.v
+    Info (12023): Found entity 1: altsource_probe_top File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 14
+Info (12127): Elaborating entity "modem_testbench" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at modem_testbench.v(95): object "SW" assigned a value but never read File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 95
+Warning (10036): Verilog HDL or VHDL warning at modem_testbench.v(96): object "KEY" assigned a value but never read File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 96
+Warning (10030): Net "LEDG" at modem_testbench.v(8) has no driver or initial value, using a default initial value '0' File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 8
+Warning (10030): Net "LEDR" at modem_testbench.v(9) has no driver or initial value, using a default initial value '0' File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+Warning (10034): Output port "DAC_DA" at modem_testbench.v(13) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+Warning (10034): Output port "DAC_DB" at modem_testbench.v(14) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+Warning (10034): Output port "ADC_CLK_A" at modem_testbench.v(15) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 15
+Warning (10034): Output port "ADC_CLK_B" at modem_testbench.v(16) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 16
+Warning (10034): Output port "ADC_OEB_A" at modem_testbench.v(17) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 17
+Warning (10034): Output port "ADC_OEB_B" at modem_testbench.v(18) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 18
+Warning (10034): Output port "DAC_CLK_A" at modem_testbench.v(19) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 19
+Warning (10034): Output port "DAC_CLK_B" at modem_testbench.v(20) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 20
+Warning (10034): Output port "DAC_MODE" at modem_testbench.v(21) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 21
+Warning (10034): Output port "DAC_WRT_A" at modem_testbench.v(22) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 22
+Warning (10034): Output port "DAC_WRT_B" at modem_testbench.v(24) has no driver File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 24
+Info (12128): Elaborating entity "clk_enable_gen" for hierarchy "clk_enable_gen:clk_gen" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 44
+Info (12128): Elaborating entity "lfsr" for hierarchy "lfsr:lfsr_i" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 50
+Info (12128): Elaborating entity "transmitter" for hierarchy "transmitter:tx_sys" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 55
+Info (12128): Elaborating entity "ps_filter_practical" for hierarchy "transmitter:tx_sys|ps_filter_practical:tx_filt_i" File: /home/grm011/engr-ece/School/DSPModem/transmitter.v Line: 11
+Warning (10230): Verilog HDL assignment warning at ps_filter_practical.v(94): truncated value with size 4 to match size of target (3) File: /home/grm011/engr-ece/School/DSPModem/ps_filter_practical.v Line: 94
+Info (12128): Elaborating entity "upsampler" for hierarchy "transmitter:tx_sys|upsampler:upsamp_i" File: /home/grm011/engr-ece/School/DSPModem/transmitter.v Line: 17
+Info (12128): Elaborating entity "channel" for hierarchy "channel:ch_sys" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 59
+Warning (10230): Verilog HDL assignment warning at channel.v(24): truncated value with size 32 to match size of target (18) File: /home/grm011/engr-ece/School/DSPModem/channel.v Line: 24
+Info (12128): Elaborating entity "awgn_generator" for hierarchy "channel:ch_sys|awgn_generator:noise_gen" File: /home/grm011/engr-ece/School/DSPModem/channel.v Line: 20
+Info (12128): Elaborating entity "dual_port_rom_awgn" for hierarchy "channel:ch_sys|awgn_generator:noise_gen|dual_port_rom_awgn:awgn_rom_inst_1" File: /home/grm011/engr-ece/School/DSPModem/awgn_generator.v Line: 298
+Warning (10030): Net "rom.data_a" at dual_port_rom_awgn.v(14) has no driver or initial value, using a default initial value '0' File: /home/grm011/engr-ece/School/DSPModem/dual_port_rom_awgn.v Line: 14
+Warning (10030): Net "rom.waddr_a" at dual_port_rom_awgn.v(14) has no driver or initial value, using a default initial value '0' File: /home/grm011/engr-ece/School/DSPModem/dual_port_rom_awgn.v Line: 14
+Warning (10030): Net "rom.we_a" at dual_port_rom_awgn.v(14) has no driver or initial value, using a default initial value '0' File: /home/grm011/engr-ece/School/DSPModem/dual_port_rom_awgn.v Line: 14
+Info (12128): Elaborating entity "receiver" for hierarchy "receiver:rx_sys" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 62
+Info (12128): Elaborating entity "downsampler" for hierarchy "receiver:rx_sys|downsampler:downsampler_i" File: /home/grm011/engr-ece/School/DSPModem/receiver.v Line: 38
+Info (12128): Elaborating entity "matched_filter_grm011" for hierarchy "receiver:rx_sys|matched_filter_grm011:matched_filt_i" File: /home/grm011/engr-ece/School/DSPModem/receiver.v Line: 43
+Info (12128): Elaborating entity "slicer" for hierarchy "receiver:rx_sys|slicer:slicer_i" File: /home/grm011/engr-ece/School/DSPModem/receiver.v Line: 59
+Info (12128): Elaborating entity "reference_measure" for hierarchy "receiver:rx_sys|reference_measure:ref_lev" File: /home/grm011/engr-ece/School/DSPModem/receiver.v Line: 64
+Warning (10230): Verilog HDL assignment warning at reference_measure.v(28): truncated value with size 16 to match size of target (1) File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 28
+Warning (10230): Verilog HDL assignment warning at reference_measure.v(54): truncated value with size 36 to match size of target (34) File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 54
+Warning (10230): Verilog HDL assignment warning at reference_measure.v(56): truncated value with size 36 to match size of target (34) File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 56
+Warning (10230): Verilog HDL assignment warning at reference_measure.v(61): truncated value with size 36 to match size of target (34) File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 61
+Warning (10230): Verilog HDL assignment warning at reference_measure.v(63): truncated value with size 36 to match size of target (34) File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 63
+Info (12128): Elaborating entity "mapper" for hierarchy "receiver:rx_sys|reference_measure:ref_lev|mapper:remap_i" File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 94
+Info (12128): Elaborating entity "switch_led_emulator" for hierarchy "switch_led_emulator:switch_led_emulator_inst" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 103
+Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/switch_led_emulator.v Line: 23
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
+Info (12130): Elaborated megafunction instantiation "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
+Info (12133): Instantiated megafunction "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/db/ip/switch_led_emulator/submodules/altsource_probe_top.v Line: 55
+    Info (12134): Parameter "lpm_type" = "altsource_probe"
+    Info (12134): Parameter "lpm_hint" = "UNUSED"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "SLD_NODE_INFO" = "4746752"
+    Info (12134): Parameter "sld_ir_width" = "4"
+    Info (12134): Parameter "instance_id" = "SW"
+    Info (12134): Parameter "probe_width" = "50"
+    Info (12134): Parameter "source_width" = "50"
+    Info (12134): Parameter "source_initial_value" = "0"
+    Info (12134): Parameter "enable_metastability" = "NO"
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe.v Line: 169
+Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
+Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe.v Line: 205
+Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 564
+Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "switch_led_emulator:switch_led_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\equal_width_gen:equal_width_inst|sld_rom_sr:\instance_id_gen:rom_info_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 756
+Info (12128): Elaborating entity "key_emulator" for hierarchy "key_emulator:key_emulator_inst" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 123
+Info (12128): Elaborating entity "altsource_probe_top" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0" File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/key_emulator.v Line: 21
+Info (12128): Elaborating entity "altsource_probe" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
+Info (12130): Elaborated megafunction instantiation "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
+Info (12133): Instantiated megafunction "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/db/ip/key_emulator/submodules/altsource_probe_top.v Line: 55
+    Info (12134): Parameter "lpm_type" = "altsource_probe"
+    Info (12134): Parameter "lpm_hint" = "UNUSED"
+    Info (12134): Parameter "sld_auto_instance_index" = "YES"
+    Info (12134): Parameter "sld_instance_index" = "0"
+    Info (12134): Parameter "SLD_NODE_INFO" = "4746752"
+    Info (12134): Parameter "sld_ir_width" = "4"
+    Info (12134): Parameter "instance_id" = "KEYS"
+    Info (12134): Parameter "probe_width" = "0"
+    Info (12134): Parameter "source_width" = "4"
+    Info (12134): Parameter "source_initial_value" = "F"
+    Info (12134): Parameter "enable_metastability" = "NO"
+Info (12128): Elaborating entity "altsource_probe_body" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe.v Line: 243
+Info (12128): Elaborating entity "altsource_probe_impl" for hierarchy "key_emulator:key_emulator_inst|altsource_probe_top:in_system_sources_probes_0|altsource_probe:issp_impl|altsource_probe_body:altsource_probe_body_inst|altsource_probe_impl:\wider_source_gen:wider_source_inst" File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/altsource_probe_body.vhd Line: 536
+Info (12128): Elaborating entity "KeyCCT" for hierarchy "KeyCCT:k0" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 131
+Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
+Info (11172): 2021.04.10.16:08:18 Progress: Loading sld35871a27/alt_sld_fab_wrapper_hw.tcl
+Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
+Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
+Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
+Info (11172): Presplit: "alt_sld_fab" instantiated altera_super_splitter "presplit"
+Info (11172): Splitter: "alt_sld_fab" instantiated altera_sld_splitter "splitter"
+Info (11172): Sldfabric: "alt_sld_fab" instantiated altera_sld_jtag_hub "sldfabric"
+Info (11172): Ident: "alt_sld_fab" instantiated altera_connection_identification_hub "ident"
+Info (11172): Alt_sld_fab: Done "alt_sld_fab" with 6 modules, 6 files
+Info (11171): Finished IP generation for the debug fabric: alt_sld_fab.
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld35871a27/alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab.v
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab.v Line: 9
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_ident.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_ident File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_ident.sv Line: 33
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_presplit.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_presplit File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_presplit.sv Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd
+    Info (12022): Found design unit 1: alt_sld_fab_alt_sld_fab_sldfabric-rtl File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 142
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
+Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
+    Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: /home/grm011/engr-ece/School/DSPModem/db/ip/sld35871a27/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 8
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 8
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 8
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 8
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[10]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[12]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[13]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[14]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[15]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 9
+    Warning (13410): Pin "DAC_DA[0]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[1]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[2]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[3]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[4]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[5]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[6]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[7]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[8]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[9]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[10]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[11]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[12]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DA[13]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 13
+    Warning (13410): Pin "DAC_DB[0]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[1]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[2]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[3]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[4]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[5]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[6]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[7]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[8]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[9]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[10]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[11]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[12]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "DAC_DB[13]" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 14
+    Warning (13410): Pin "ADC_CLK_A" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 15
+    Warning (13410): Pin "ADC_CLK_B" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 16
+    Warning (13410): Pin "ADC_OEB_A" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 17
+    Warning (13410): Pin "ADC_OEB_B" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 18
+    Warning (13410): Pin "DAC_CLK_A" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 19
+    Warning (13410): Pin "DAC_CLK_B" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 20
+    Warning (13410): Pin "DAC_MODE" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 21
+    Warning (13410): Pin "DAC_WRT_A" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 22
+    Warning (13410): Pin "DAC_WRT_B" is stuck at GND File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 24
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (13000): Registers with preset signals will power-up high File: /opt/intelFPGA/20.1/quartus/libraries/megafunctions/sld_jtag_hub.vhd Line: 386
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 51 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK_50" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 5
+    Warning (15610): No output dependent on input pin "PHYS_SW[0]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[1]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[2]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[3]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[4]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[5]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[6]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[7]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[8]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[9]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[10]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[11]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[12]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[13]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[14]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[15]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[16]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_SW[17]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 6
+    Warning (15610): No output dependent on input pin "PHYS_KEY[0]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 7
+    Warning (15610): No output dependent on input pin "PHYS_KEY[1]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 7
+    Warning (15610): No output dependent on input pin "PHYS_KEY[2]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 7
+    Warning (15610): No output dependent on input pin "PHYS_KEY[3]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 7
+    Warning (15610): No output dependent on input pin "ADC_DA[0]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[1]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[2]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[3]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[4]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[5]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[6]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[7]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[8]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[9]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[10]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[11]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[12]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DA[13]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 11
+    Warning (15610): No output dependent on input pin "ADC_DB[0]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[1]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[2]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[3]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[4]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[5]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[6]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[7]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[8]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[9]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[10]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[11]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[12]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+    Warning (15610): No output dependent on input pin "ADC_DB[13]" File: /home/grm011/engr-ece/School/DSPModem/modem_testbench.v Line: 12
+Info (21057): Implemented 455 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 54 input pins
+    Info (21059): Implemented 60 output pins
+    Info (21061): Implemented 340 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 141 warnings
+    Info: Peak virtual memory: 625 megabytes
+    Info: Processing ended: Sat Apr 10 16:08:30 2021
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:27
+
+

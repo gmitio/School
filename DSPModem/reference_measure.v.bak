@@ -4,12 +4,12 @@ module reference_measure(
 	input clk,
 	input reset,
 	input sym_clk_ena,
-	input [17:0] recovered_i, recovered_q,
+	input reg [17:0] recovered_i, recovered_q,
 	output reg [17:0] measured_ref_i, measured_ref_q,
 	/** Throw the signals in here for MER measurement because why not **/
 	output reg [54:0] mapper_output_power_i, mapper_output_power_q,	// 1s17^2 * 2s16
-	input [1:0] syms_i, syms_q,
-	input [17:0] filt_out_i, filt_out_q,
+	input reg [1:0] syms_i, syms_q,
+	input reg [17:0] filt_out_i, filt_out_q,
 	output reg [35+16:0] accumulated_square_error_i, accumulated_square_error_q
 	
 );
