@@ -10,12 +10,12 @@ module reference_measure(
 	output reg [54:0] mapper_output_power_i, mapper_output_power_q,	// 1s17^2 * 2s16
 	input [1:0] syms_i, syms_q,
 	input [17:0] filt_out_i, filt_out_q,
-	output reg [35+16:0] accumulated_square_error_i, accumulated_square_error_q
+	output reg [35+20:0] accumulated_square_error_i, accumulated_square_error_q
 	
 );
 
 
-	parameter BITS_ACCUMULATED = 16;
+	parameter BITS_ACCUMULATED = 20;
 	reg [BITS_ACCUMULATED-1:0] accum_count;
 	always @ (posedge clk)
 		if(reset)
@@ -23,7 +23,8 @@ module reference_measure(
 		else if(sym_clk_ena)
 			accum_count <= accum_count + 1'b1;
 			
-	reg last_clked_count, clear_accumulator;
+	reg [BITS_ACCUMULATED-1:0] last_clked_count; 
+	reg clear_accumulator;
 	always @(posedge clk)
 		last_clked_count <= accum_count;
 

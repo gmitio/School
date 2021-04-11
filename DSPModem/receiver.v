@@ -4,7 +4,9 @@ module receiver(
 	input sam_clk_ena,
 	input sym_clk_ena,
 	input signed [17:0] signal_in,
-	output [1:0] syms_out_i, syms_out_q);
+	output [1:0] syms_out_i, syms_out_q,
+	output [35+20:0] accumulated_square_error_i, accumulated_square_error_q
+);
 	
 
 	
@@ -43,6 +45,18 @@ module receiver(
 	matched_filter_grm011 matched_filt_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(downsamp_i), .y(recovered_i) );
 	matched_filter_grm011 matched_filt_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(downsamp_q), .y(recovered_q) );
 	
+	reg signed [17:0] recov_i_clkd, recov_q_clkd;
+	always @(posedge clk)
+		if(reset)
+			recov_i_clkd <= 18'd0;
+		else if(sym_clk_ena)
+			recov_i_clkd <= recovered_i;
+		
+	always @(posedge clk)
+		if(reset)
+			recov_q_clkd <= 18'd0;
+		else if(sym_clk_ena)
+			recov_q_clkd <= recovered_q;
 	/** Measure the reference levels of these incoming signals to process them accordingly	**/
 	/**
 	input clk,
@@ -53,14 +67,14 @@ module receiver(
 	**/
 	wire [17:0] measured_ref_i, measured_ref_q;
 	wire [54:0] mapper_output_power_i, mapper_output_power_q;
-	wire [35+16:0] accumulated_square_error_i, accumulated_square_error_q;
+	
 	
 		/** Slice the 18 bit signal to recover originally transmitted symbols **/
-	slicer slicer_i( .clk(clk), .slicer_in(recovered_i), .ref_level(measured_ref_i), .slicer_out(syms_out_i) );
-	slicer slicer_q( .clk(clk), .slicer_in(recovered_q), .ref_level(measured_ref_q), .slicer_out(syms_out_q) );
+	slicer slicer_i( .clk(clk), .slicer_in(recov_i_clkd), .ref_level(measured_ref_i), .slicer_out(syms_out_i) );
+	slicer slicer_q( .clk(clk), .slicer_in(recov_q_clkd), .ref_level(measured_ref_q), .slicer_out(syms_out_q) );
 	
-	reference_measure ref_lev( .clk(clk), .reset(reset), .sym_clk_ena(sym_clk_ena), .recovered_i(recovered_i), .recovered_q(recovered_q), .measured_ref_i(measured_ref_i), .measured_ref_q(measured_ref_q),
-								.mapper_output_power_i(mapper_output_power_i), .mapper_output_power_q(mapper_output_power_q), .syms_i(syms_out_i), .syms_q(syms_out_q), .filt_out_i(recovered_i), .filt_out_q(recovered_q),
+	reference_measure ref_lev( .clk(clk), .reset(reset), .sym_clk_ena(sym_clk_ena), .recovered_i(recov_i_clkd), .recovered_q(recov_q_clkd), .measured_ref_i(measured_ref_i), .measured_ref_q(measured_ref_q),
+								.mapper_output_power_i(mapper_output_power_i), .mapper_output_power_q(mapper_output_power_q), .syms_i(syms_out_i), .syms_q(syms_out_q), .filt_out_i(recov_i_clkd), .filt_out_q(recov_q_clkd),
 								.accumulated_square_error_i(accumulated_square_error_i), .accumulated_square_error_q(accumulated_square_error_q));
 	
 

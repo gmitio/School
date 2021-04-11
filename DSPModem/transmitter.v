@@ -8,8 +8,8 @@ module transmitter(
 	
 	wire signed [17:0] baseband_i, baseband_q;
 	// Route input through pulse-shaping filter
-	ps_filter_practical tx_filt_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b00), .x_in(syms_in_i), .y(baseband_i) );
-	ps_filter_practical tx_filt_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b00), .x_in(syms_in_q), .y(baseband_q) );
+	ps_filter_practical tx_filt_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b01), .x_in(syms_in_i), .y(baseband_i) );
+	ps_filter_practical tx_filt_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b01), .x_in(syms_in_q), .y(baseband_q) );
 	
 	// Upsample for I/Q channels; add em together and send it
 	// TODO

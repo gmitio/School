@@ -1,6 +1,7 @@
 module lfsr (
     input clk,
     input reset,
+	 input sam_clk_ena,
     input sym_clk_ena,
     output reg [1:0] lfsr_out, lfsr_out_q,
     output wire rollover
@@ -23,7 +24,7 @@ always @ (posedge clk)
         lfsr_reg <= {lfsr_feedback, lfsr_reg[21:1]};
 
 reg [6:0] test_counter;
-always @ (posedge sym_clk_ena)
+always @ (posedge sam_clk_ena)
     if (reset)
         test_counter <= 1'b0;
     else
@@ -35,7 +36,7 @@ always @ (posedge clk)
         lfsr_out <= 2'b11;
 		lfsr_out_q <= 2'b11;
     end
-    else if (sym_clk_ena)	// Stimulus input
+    else if (sam_clk_ena)	// Stimulus input
 		begin
         lfsr_out <= lfsr_reg[1:0];
 		lfsr_out_q <= lfsr_reg[3:2];

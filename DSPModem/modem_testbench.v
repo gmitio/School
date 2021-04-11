@@ -20,7 +20,11 @@ module modem_testbench(
 	output DAC_CLK_B,
 	output DAC_MODE,
 	output DAC_WRT_A,
-	output DAC_WRT_B
+	output DAC_WRT_B,
+	
+	output wire [1:0] sym_out_i, sym_out_q,
+	output wire [1:0] syms_i, syms_q,
+	output signed [17:0] transmitter_out	// Upconverted 6.25MHz signal from transmitter
 );
 
 	reg clk, reset;
@@ -45,21 +49,21 @@ module modem_testbench(
 	
 	
 	/** Use short LFSRs for symbol generation and testing in ModelSim **/
-	wire [1:0] syms_i, syms_q;
+	
 	wire rollover_sig_i, rollover_sig_q;	// For setting clear accumulator signal in MER test system 
-	lfsr lfsr_i( .clk(clk), .reset(reset), .sym_clk_ena(sym_clk_ena), .lfsr_out(syms_i), .rollover(rollover_sig_i) );
-	lfsr lfsr_q( .clk(clk), .reset(reset), .sym_clk_ena(sym_clk_ena), .lfsr_out_q(syms_q), .rollover(rollover_sig_q) );
+	lfsr lfsr_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .lfsr_out(syms_i), .rollover(rollover_sig_i) );
+	lfsr lfsr_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .lfsr_out_q(syms_q), .rollover(rollover_sig_q) );
 
 
-	wire signed [17:0] transmitter_out;	// Upconverted 6.25MHz signal from transmitter
+	
 	transmitter tx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .syms_in_i(syms_i), .syms_in_q(syms_q), .transmitter_out(transmitter_out) );
 	
 	
 	wire signed [17:0] channel_out;	// 6.25MHz signal after being routed thru the channel
 	channel ch_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .sig_in(transmitter_out), .sig_out(channel_out) );
 	
-	wire [1:0] sym_out_i, sym_out_q;
-	receiver rx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .signal_in(channel_out), .syms_out_i(sym_out_i), .syms_out_q(sym_out_q) );
+	
+	receiver rx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .signal_in(transmitter_out), .syms_out_i(sym_out_i), .syms_out_q(sym_out_q) );
 
 
 	// Do the BER measurement here or in the receiver? Probably just do it here
