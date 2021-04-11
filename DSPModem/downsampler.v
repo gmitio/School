@@ -56,7 +56,7 @@ always @ (posedge clk)
     if (reset)
         sam_clk_counter <= 2'd3;
     else
-        sam_clk_counter <= sam_clk_counter + 2'd1;
+        sam_clk_counter <= sam_clk_counter + 2'd3;
 
 
 // Choose which sample gets to be fed into the multiplier
