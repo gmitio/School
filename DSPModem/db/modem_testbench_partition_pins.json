@@ -4,6 +4,22 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "DAC_CLK_A",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_CLK_B",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_WRT_A",
+					"strict" : false
+				},
+				{
+					"name" : "DAC_WRT_B",
+					"strict" : false
+				},
+				{
 					"name" : "sym_out_i[0]",
 					"strict" : false
 				},

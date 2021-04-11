@@ -26,6 +26,26 @@ module modem_testbench(
 	output wire [1:0] syms_i, syms_q,
 	output signed [17:0] transmitter_out	// Upconverted 6.25MHz signal from transmitter
 );
+/** TODO: GET CHANNEL & BER WORKING, SET UP TEST POINT TAPS **/
+
+	//************************
+	//				  Set up DACs
+					
+					assign DAC_CLK_A = clk;
+					assign DAC_CLK_B = clk;
+					
+					
+					assign DAC_MODE = 1'b1; //treat DACs seperately
+					
+					assign DAC_WRT_A = ~clk;
+					assign DAC_WRT_B = ~clk;
+						
+		reg signed [17:0] DAC_B_sig;			
+						
+		always@ (posedge clk) 
+						DAC_DB = {~DAC_B_sig[17],
+						DAC_B_sig[16:4]} ;	
+//  End DAC setup
 
 	reg clk, reset;
 	always @ (posedge CLOCK_50)
@@ -58,9 +78,13 @@ module modem_testbench(
 	
 	transmitter tx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .syms_in_i(syms_i), .syms_in_q(syms_q), .transmitter_out(transmitter_out) );
 	
-	
+	/** Send testpoint 2 to the DAC **/
+	//assign DAC_out = transmitter_out[17:4];
+//	always @(posedge clk)
+//			DAC_B_sig <= transmitter_out;
+
 	wire signed [17:0] channel_out;	// 6.25MHz signal after being routed thru the channel
-	channel ch_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .sig_in(transmitter_out), .sig_out(channel_out) );
+	channel ch_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .sig_in(transmitter_out), .sig_out(channel_out), .awgn_en(SW[4]), .gain_set(SW[1:0]) );
 	
 	
 	receiver rx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .signal_in(transmitter_out), .syms_out_i(sym_out_i), .syms_out_q(sym_out_q) );
