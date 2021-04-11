@@ -1,5 +1,5 @@
 Analysis & Synthesis report for modem_testbench
-Sun Apr 11 15:37:32 2021
+Sun Apr 11 15:48:12 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -228,7 +228,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 11 15:37:31 2021           ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 11 15:48:11 2021           ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
 ; Revision Name                      ; modem_testbench                                 ;
 ; Top-level Entity Name              ; modem_testbench                                 ;
@@ -339,7 +339,7 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
+; Average used               ; 1.00        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
@@ -10098,7 +10098,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:43     ;
+; Top            ; 00:00:42     ;
 +----------------+--------------+
 
 
@@ -10609,34 +10609,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
-    Info: Processing started: Sun Apr 11 15:35:54 2021
+    Info: Processing started: Sun Apr 11 15:46:37 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DSPModem -c modem_testbench
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12248): Elaborating Platform Designer system entity "switch_led_emulator.qsys"
-Info (12250): 2021.04.11.15:36:08 Progress: Loading DSPModem/switch_led_emulator.qsys
-Info (12250): 2021.04.11.15:36:09 Progress: Reading input file
-Info (12250): 2021.04.11.15:36:09 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2021.04.11.15:46:51 Progress: Loading DSPModem/switch_led_emulator.qsys
+Info (12250): 2021.04.11.15:46:51 Progress: Reading input file
+Info (12250): 2021.04.11.15:46:51 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2021.04.11.15:36:09 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2021.04.11.15:36:09 Progress: Building connections
-Info (12250): 2021.04.11.15:36:09 Progress: Parameterizing connections
-Info (12250): 2021.04.11.15:36:09 Progress: Validating
-Info (12250): 2021.04.11.15:36:10 Progress: Done reading input file
+Info (12250): 2021.04.11.15:46:51 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2021.04.11.15:46:51 Progress: Building connections
+Info (12250): 2021.04.11.15:46:51 Progress: Parameterizing connections
+Info (12250): 2021.04.11.15:46:51 Progress: Validating
+Info (12250): 2021.04.11.15:46:52 Progress: Done reading input file
 Info (12250): Switch_led_emulator: Generating switch_led_emulator "switch_led_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "switch_led_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Switch_led_emulator: Done "switch_led_emulator" with 2 modules, 2 files
 Info (12249): Finished elaborating Platform Designer system entity "switch_led_emulator.qsys"
 Info (12248): Elaborating Platform Designer system entity "key_emulator.qsys"
-Info (12250): 2021.04.11.15:36:16 Progress: Loading DSPModem/key_emulator.qsys
-Info (12250): 2021.04.11.15:36:16 Progress: Reading input file
-Info (12250): 2021.04.11.15:36:16 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
+Info (12250): 2021.04.11.15:46:58 Progress: Loading DSPModem/key_emulator.qsys
+Info (12250): 2021.04.11.15:46:58 Progress: Reading input file
+Info (12250): 2021.04.11.15:46:58 Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 18.1]
 Warning (12251): In_system_sources_probes_0: Used altera_in_system_sources_probes 20.1 (instead of 18.1)
-Info (12250): 2021.04.11.15:36:16 Progress: Parameterizing module in_system_sources_probes_0
-Info (12250): 2021.04.11.15:36:16 Progress: Building connections
-Info (12250): 2021.04.11.15:36:16 Progress: Parameterizing connections
-Info (12250): 2021.04.11.15:36:16 Progress: Validating
-Info (12250): 2021.04.11.15:36:17 Progress: Done reading input file
+Info (12250): 2021.04.11.15:46:58 Progress: Parameterizing module in_system_sources_probes_0
+Info (12250): 2021.04.11.15:46:58 Progress: Building connections
+Info (12250): 2021.04.11.15:46:58 Progress: Parameterizing connections
+Info (12250): 2021.04.11.15:46:58 Progress: Validating
+Info (12250): 2021.04.11.15:46:59 Progress: Done reading input file
 Info (12250): Key_emulator: Generating key_emulator "key_emulator" for QUARTUS_SYNTH
 Info (12250): In_system_sources_probes_0: "key_emulator" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
 Info (12250): Key_emulator: Done "key_emulator" with 2 modules, 2 files
@@ -10644,7 +10644,7 @@ Info (12249): Finished elaborating Platform Designer system entity "key_emulator
 Info (12021): Found 1 design units, including 1 entities, in source file KeyCCT.v
     Info (12023): Found entity 1: KeyCCT File: /home/grm011/engr-ece/School/DSPModem/KeyCCT.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file upsampler.v
-    Info (12023): Found entity 1: upsampler File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 2
+    Info (12023): Found entity 1: upsampler File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file transmitter.v
     Info (12023): Found entity 1: transmitter File: /home/grm011/engr-ece/School/DSPModem/transmitter.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file slicer.v
@@ -10775,7 +10775,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr
     Info (12023): Found entity 1: cmpr_ngc File: /home/grm011/engr-ece/School/DSPModem/db/cmpr_ngc.tdf Line: 23
 Info (12033): Analysis and Synthesis generated Signal Tap or debug node instance "auto_signaltap_0"
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2021.04.11.15:36:32 Progress: Loading sld35871a27/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2021.04.11.15:47:14 Progress: Loading sld35871a27/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -10805,16 +10805,16 @@ Info (278001): Inferred 138 megafunctions from design logic
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|reference_measure:ref_lev|Mult1" File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 89
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|reference_measure:ref_lev|Mult2" File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 109
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|reference_measure:ref_lev|Mult3" File: /home/grm011/engr-ece/School/DSPModem/reference_measure.v Line: 111
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult3" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult4" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult3" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult4" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult3" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_q|Mult4" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult3" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "transmitter:tx_sys|upsampler:upsamp_i|Mult4" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|matched_filter_grm011:matched_filt_i|Mult55" File: /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v Line: 159
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|matched_filter_grm011:matched_filt_i|Mult27" File: /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v Line: 159
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "receiver:rx_sys|matched_filter_grm011:matched_filt_i|Mult56" File: /home/grm011/engr-ece/School/DSPModem/matched_filter_grm011.v Line: 159
@@ -10965,8 +10965,8 @@ Info (12133): Instantiated megafunction "receiver:rx_sys|reference_measure:ref_l
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_c6t.tdf
     Info (12023): Found entity 1: mult_c6t File: /home/grm011/engr-ece/School/DSPModem/db/mult_c6t.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult0" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
+Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult0" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult0" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
     Info (12134): Parameter "LPM_WIDTHA" = "13"
     Info (12134): Parameter "LPM_WIDTHB" = "18"
     Info (12134): Parameter "LPM_WIDTHP" = "31"
@@ -10978,8 +10978,8 @@ Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|l
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_e6t.tdf
     Info (12023): Found entity 1: mult_e6t File: /home/grm011/engr-ece/School/DSPModem/db/mult_e6t.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult2" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
+Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult2" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult2" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
     Info (12134): Parameter "LPM_WIDTHA" = "18"
     Info (12134): Parameter "LPM_WIDTHB" = "17"
     Info (12134): Parameter "LPM_WIDTHP" = "35"
@@ -10991,8 +10991,8 @@ Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|l
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_a6t.tdf
     Info (12023): Found entity 1: mult_a6t File: /home/grm011/engr-ece/School/DSPModem/db/mult_a6t.tdf Line: 29
-Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
-Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult1" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 79
+Info (12130): Elaborated megafunction instantiation "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult1" File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
+Info (12133): Instantiated megafunction "transmitter:tx_sys|upsampler:upsamp_q|lpm_mult:Mult1" with the following parameter: File: /home/grm011/engr-ece/School/DSPModem/upsampler.v Line: 76
     Info (12134): Parameter "LPM_WIDTHA" = "15"
     Info (12134): Parameter "LPM_WIDTHB" = "18"
     Info (12134): Parameter "LPM_WIDTHP" = "33"
@@ -11767,8 +11767,8 @@ Info (21057): Implemented 30811 device resources after synthesis - the final res
     Info (21062): Implemented 276 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 125 warnings
     Info: Peak virtual memory: 852 megabytes
-    Info: Processing ended: Sun Apr 11 15:37:32 2021
-    Info: Elapsed time: 00:01:38
-    Info: Total CPU time (on all processors): 00:02:21
+    Info: Processing ended: Sun Apr 11 15:48:12 2021
+    Info: Elapsed time: 00:01:35
+    Info: Total CPU time (on all processors): 00:02:18
 
 

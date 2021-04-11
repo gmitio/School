@@ -1,4 +1,3 @@
-/** ALEX'S UPSAMPLER -- WRITE YOUR OWN **/
 module upsampler (
     input clk,
     input reset,
@@ -7,15 +6,15 @@ module upsampler (
     input [17:0] x_in,
     output reg signed [17:0] y
 );
-// Upsamples an input from sam_clk to sys_clk and applies a low pass filter
+
 
 integer i;
-parameter N = 20; // Must be multiple of four
+parameter N = 20; 
 parameter N_BY_4 = N / 4;
 wire signed [17:0] b[N-1:0];
 
 
-// B Definition
+// Coefficient definitions
 assign b[0] = 18'sd599;
 assign b[1] = 18'sd764;
 assign b[2] = -18'sd30;
@@ -38,7 +37,6 @@ assign b[18] = 18'sd764;
 assign b[19] = 18'sd599;
 
 
-// X Definition (Updates at sam_clk)
 reg signed [17:0] x[N_BY_4-1:0];
 always @ (posedge clk)
     if (reset)
@@ -51,8 +49,7 @@ always @ (posedge clk)
     end
 
 
-// Staggered sam_clk_ena definition
-// This counts from 0 to 3, and indicates which of each four adjacent taps should output a signal for a given sample
+// Counter for multiplier sharing
 reg [1:0] sam_clk_counter;
 always @ (posedge clk)
     if (reset)
@@ -61,7 +58,7 @@ always @ (posedge clk)
         sam_clk_counter <= sam_clk_counter + 1'b1;
 
 
-// Multiplier Multiplexed B input definition
+// Mux for delaying inputs into multipliers
 reg signed [17:0] b_into_mult[N_BY_4-1:0];
 always @ *
     for (i = 0; i < N_BY_4; i=i+1)
@@ -72,15 +69,13 @@ always @ *
             2'd3: b_into_mult[i] <= b[i * 4 + 3];
         endcase
 
-// Multiplier definition
+// Perform the appropriate multiplication
 reg signed [35:0] mult_out[N_BY_4-1:0];
 always @ *
     for (i = 0; i < N_BY_4; i=i+1)
         mult_out[i] <= b_into_mult[i] * x[i];
 
-
-// Adder Definitions
-
+// Create the adder structure
 reg signed [35:0] sum_level_0[2:0];
 always @ (posedge clk) begin
     for (i = 0; i < 2; i = i + 1)
@@ -107,18 +102,17 @@ always @ (posedge clk) begin
         sum_level_1[1] <= sum_level_0[2];
 end
 
-reg signed [35:0] sum_level_2[0:0];
+reg signed [35:0] sum_level_2;
 always @ (posedge clk) begin
     for (i = 0; i < 1; i = i + 1)
         if (reset)
-            sum_level_2[i] <= 36'b0;
+            sum_level_2 <= 36'b0;
         else
-            sum_level_2[i] <= sum_level_1[i] + sum_level_1[i+1];
+            sum_level_2 <= sum_level_1[0] + sum_level_1[1];
 end
 
-
+// Truncate the upsampler output
 always @ *
-    // Slice one bit off the top here to make output 1s17
-    y <= sum_level_2[0][34:17];
+    y <= sum_level_2[34:17];
 
 endmodule

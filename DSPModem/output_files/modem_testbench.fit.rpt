@@ -1,5 +1,5 @@
 Fitter report for modem_testbench
-Sun Apr 11 15:41:12 2021
+Sun Apr 11 15:51:42 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 
 
@@ -72,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Apr 11 15:41:11 2021           ;
+; Fitter Status                      ; Successful - Sun Apr 11 15:51:41 2021           ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Standard Edition ;
 ; Revision Name                      ; modem_testbench                                 ;
 ; Top-level Entity Name              ; modem_testbench                                 ;
@@ -4069,7 +4069,7 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_clock_groups -asynchronous -group {altera_reserved_tck}
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'modem_testbench.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Warning (332060): Node: clk was determined to be a clock but was found without an associated clock assignment.
-    Info (13166): Register transmitter:tx_sys|upsampler:upsamp_i|sum_level_2[0][17] is being clocked by clk
+    Info (13166): Register transmitter:tx_sys|upsampler:upsamp_i|sum_level_2[17] is being clocked by clk
 Warning (332060): Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register clk is being clocked by CLOCK_50
 Warning (332060): Node: receiver:rx_sys|reference_measure:ref_lev|last_clked_count[0] was determined to be a clock but was found without an associated clock assignment.
@@ -4161,21 +4161,21 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "SW[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "clock_27" is assigned to location or region, but does not exist in design
     Warning (15706): Node "clock_50" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:33
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:32
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:35
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:33
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:01:16
+Info (170192): Fitter placement operations ending: elapsed time is 00:01:13
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 11% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 28% of the available device resources in the region that extends from location X23_Y24 to location X33_Y36
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:25
-Info (11888): Total time spent on timing analysis during the Fitter is 5.48 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:24
+Info (11888): Total time spent on timing analysis during the Fitter is 5.39 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -4184,10 +4184,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:15
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/grm011/engr-ece/School/DSPModem/output_files/modem_testbench.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 1460 megabytes
-    Info: Processing ended: Sun Apr 11 15:41:18 2021
-    Info: Elapsed time: 00:03:45
-    Info: Total CPU time (on all processors): 00:05:24
+    Info: Peak virtual memory: 1452 megabytes
+    Info: Processing ended: Sun Apr 11 15:51:47 2021
+    Info: Elapsed time: 00:03:34
+    Info: Total CPU time (on all processors): 00:05:08
 
 
 +----------------------------+
