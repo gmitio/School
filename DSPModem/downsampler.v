@@ -3,6 +3,7 @@ module downsampler (
     input reset,
     input sam_clk_ena,
     input sym_clk_ena,
+	 input [1:0] delay,
     input [17:0] x_in,
     output reg signed [17:0] y
 );
@@ -35,7 +36,21 @@ assign b[17] = -18'sd30;
 assign b[18] = 18'sd764;
 assign b[19] = 18'sd599;
 
-
+reg [17:0] x_in_1, x_in_2, x_in_3, x_in_4;
+reg [17:0] x_del;
+always @ (posedge clk)
+	begin
+	x_in_1 <= x_in;
+	x_in_2 <= x_in_1;
+	x_in_3 <= x_in_2;
+	end
+always @ *
+	case(delay)
+		2'b00: x_del = x_in;
+		2'b01: x_del = x_in_1;
+		2'b10: x_del = x_in_2;
+		2'b11: x_del = x_in_3;
+	endcase
 
 // Input delay chain
 reg signed [17:0] x[N-1:0];
@@ -44,7 +59,7 @@ always @ (posedge clk)
         for (i = 0; i < N; i = i + 1)
             x[i] <= 2'b0;
     else begin
-        x[0] <= x_in;
+        x[0] <= x_del;
         for (i = 1; i < N; i = i + 1)
             x[i] <= x[i-1];
     end

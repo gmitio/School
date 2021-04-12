@@ -3,13 +3,14 @@ module transmitter(
 	input reset,
 	input sam_clk_ena,
 	input sym_clk_ena,
+	input [1:0] del_i, del_q,
 	input [1:0] syms_in_i, syms_in_q,
 	output reg signed [17:0] transmitter_out);
 	
 	wire signed [17:0] baseband_i, baseband_q;
 	// Route input through pulse-shaping filter
-	ps_filter_practical tx_filt_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b01), .x_in(syms_in_i), .y(baseband_i) );
-	ps_filter_practical tx_filt_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(2'b01), .x_in(syms_in_q), .y(baseband_q) );
+	ps_filter_practical tx_filt_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(del_i), .x_in(syms_in_i), .y(baseband_i) );
+	ps_filter_practical tx_filt_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .delay(del_q), .x_in(syms_in_q), .y(baseband_q) );
 	
 	// Upsample for I/Q channels; add em together and send it
 	// TODO

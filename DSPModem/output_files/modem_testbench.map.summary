@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sun Apr 11 15:48:11 2021
+Analysis & Synthesis Status : Successful - Sun Apr 11 21:27:01 2021
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Standard Edition
 Revision Name : modem_testbench
 Top-level Entity Name : modem_testbench
 Family : Cyclone IV E
-Total logic elements : 30,076
-    Total combinational functions : 23,755
-    Dedicated logic registers : 20,695
-Total registers : 20695
+Total logic elements : 28,053
+    Total combinational functions : 21,870
+    Dedicated logic registers : 20,560
+Total registers : 20560
 Total pins : 136
 Total virtual pins : 0
-Total memory bits : 942,080
+Total memory bits : 1,884,160
 Embedded Multiplier 9-bit elements : 276
 Total PLLs : 0

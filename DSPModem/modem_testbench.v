@@ -76,18 +76,23 @@ module modem_testbench(
 
 
 	
-	transmitter tx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .syms_in_i(syms_i), .syms_in_q(syms_q), .transmitter_out(transmitter_out) );
+	transmitter tx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .syms_in_i(syms_i), .syms_in_q(syms_q), .transmitter_out(transmitter_out), .del_i(SW[1:0]), .del_q(SW[1:0]) );
 	
 	/** Send testpoint 2 to the DAC **/
 	//assign DAC_out = transmitter_out[17:4];
-//	always @(posedge clk)
-//			DAC_B_sig <= transmitter_out;
+	always @(posedge clk)
+		case(SW[17:16])
+			2'b00: DAC_B_sig <= 18'd0;
+			2'b01: DAC_B_sig <= transmitter_out;
+			2'b10: DAC_B_sig <= channel_out;
+			2'b11: DAC_B_sig <= tp3;
+		endcase
 
 	wire signed [17:0] channel_out;	// 6.25MHz signal after being routed thru the channel
-	channel ch_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .sig_in(transmitter_out), .sig_out(channel_out), .awgn_en(SW[4]), .gain_set(SW[1:0]) );
+	channel ch_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .sig_in(transmitter_out), .sig_out(channel_out), .awgn_en(SW[4]));//, .gain_set(SW[1:0]) );
 	
-	
-	receiver rx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .signal_in(transmitter_out), .syms_out_i(sym_out_i), .syms_out_q(sym_out_q) );
+	wire signed [17:0] tp3;
+	receiver rx_sys( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .signal_in(transmitter_out), .syms_out_i(sym_out_i), .syms_out_q(sym_out_q), .ds_del(SW[3:2]), .testpoint_3(tp3));
 
 
 	// Do the BER measurement here or in the receiver? Probably just do it here

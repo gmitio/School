@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="922ffc953a8b0d070e94"/>
+    <hash md5_digest_80b="ae33f7c041749ec10db4"/>
   </project>
   <file_info>
     <file device="EP4CE115F29C7" path="modem_testbench.sof" usercode="0xFFFFFFFF"/>
@@ -211,8 +211,8 @@
         <parameter name="SLD_NODE_CRC_HIWORD" type="dec" value="41394"/>
         <parameter name="SLD_NODE_CRC_LOWORD" type="dec" value="50132"/>
         <parameter name="sld_incremental_routing" type="unknown" value="1"/>
-        <parameter name="sld_sample_depth" type="unknown" value="4096"/>
-        <parameter name="sld_segment_size" type="unknown" value="4096"/>
+        <parameter name="sld_sample_depth" type="unknown" value="8192"/>
+        <parameter name="sld_segment_size" type="unknown" value="8192"/>
         <parameter name="sld_ram_block_type" type="unknown" value="AUTO"/>
         <parameter name="sld_state_bits" type="unknown" value="11"/>
         <parameter name="sld_buffer_full_stop" type="unknown" value="1"/>
@@ -240,8 +240,8 @@
         <parameter name="SLD_ADVANCED_TRIGGER_8" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_9" type="string" value="NONE"/>
         <parameter name="SLD_ADVANCED_TRIGGER_10" type="string" value="NONE"/>
-        <parameter name="sld_inversion_mask_length" type="unknown" value="716"/>
-        <parameter name="sld_inversion_mask" type="unknown" value="00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
+        <parameter name="sld_inversion_mask_length" type="unknown" value="717"/>
+        <parameter name="sld_inversion_mask" type="unknown" value="000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"/>
         <parameter name="sld_power_up_trigger" type="unknown" value="0"/>
         <parameter name="SLD_STATE_FLOW_MGR_ENTITY" type="string" value="state_flow_mgr_entity.vhd"/>
         <parameter name="sld_state_flow_use_generated" type="unknown" value="0"/>
@@ -264,13 +264,13 @@
   <sld_infos>
     <sld_info hpath="key_emulator:key_emulator_inst" name="key_emulator_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME key_emulator HAS_SOPCINFO 1 GENERATION_ID 1618177619"/>
+        <assignment_value text="QSYS_NAME key_emulator HAS_SOPCINFO 1 GENERATION_ID 1618197944"/>
       </assignment_values>
       <parameters/>
     </sld_info>
     <sld_info hpath="switch_led_emulator:switch_led_emulator_inst" name="switch_led_emulator_inst">
       <assignment_values>
-        <assignment_value text="QSYS_NAME switch_led_emulator HAS_SOPCINFO 1 GENERATION_ID 1618177612"/>
+        <assignment_value text="QSYS_NAME switch_led_emulator HAS_SOPCINFO 1 GENERATION_ID 1618197937"/>
       </assignment_values>
       <parameters/>
     </sld_info>

@@ -21,9 +21,9 @@ module channel(
 	// TODO: Add this module
 	awgn_generator noise_gen( .clk(clk), .clk_en(noise_en), .reset_n(~del_reset), .awgn_out(noise) );
 	
-	reg signed [17:0] gain;	//9s9 number?
+	reg signed [17:0] gain;	//Formatting of this?
 	
-	always @ *
+	always @ *	// TODO if BER stuff works
 		case(gain_set)
 			2'b00:	gain = 18'd512;
 			2'b01:	gain = 18'd1024;
@@ -34,16 +34,17 @@ module channel(
 	//assign gain = 18'sd512 * 8;
 	reg signed [35:0] channel_app_gain;
 	always @ *
-		if(awgn_en)
-			begin
-			channel_app_gain = sig_in * gain;
-			sig_out = noise + channel_app_gain[26:9];
-			end
-		else
-			begin
-			channel_app_gain = sig_in * gain;
-			sig_out = channel_app_gain[26:9];
-			end
+			sig_out = sig_in + noise;
+//			begin
+//			channel_app_gain = sig_in * gain;
+//			sig_out = noise + channel_app_gain[26:9];
+//			end
+//		else
+//			sig_out = sig_in;
+//			begin
+//			channel_app_gain = sig_in * gain;
+//			sig_out = channel_app_gain[26:9];
+//			end
 
 //	always @ *
 //		begin

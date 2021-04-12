@@ -1,12 +1,12 @@
-<session jtag_chain="USB-Blaster [3-3]" jtag_device="@1: 10CL120(Y|Z)/EP3C120/.. (0x020F70DD)" sof_file="/home/grm011/engr-ece/EE465/Deliverable2/output_files/mer_testbench.sof">
+<session jtag_chain="USB-Blaster [3-1]" jtag_device="@1: 10CL120(Y|Z)/EP3C120/.. (0x020F70DD)" sof_file="/home/grm011/engr-ece/EE465/Deliverable2/output_files/mer_testbench.sof">
   <display_attributes is_max_probe_read_interval="1" is_write_immediate="1" probe_read_interval="1" probe_read_interval_units="s"/>
   <instance enable_logging="true" entity_name="SW" is_auto_node="true" name="SW">
     <node_ip_info instance_id="0" mfg_id="110" node_id="9" version="0"/>
     <sources>
       <source name="source[0]" value="true"/>
-      <source name="source[1]" value="false"/>
+      <source name="source[1]" value="true"/>
       <source name="source[2]" value="true"/>
-      <source name="source[3]" value="false"/>
+      <source name="source[3]" value="true"/>
       <source name="source[4]" value="false"/>
       <source name="source[5]" value="true"/>
       <source name="source[6]" value="false"/>
@@ -191,7 +191,7 @@
       <view_node expanded="true" index="20" node_type="source" view_type="group_member"/>
       <view_node expanded="true" index="19" node_type="source" view_type="group_member"/>
       <view_node expanded="true" index="18" node_type="source" view_type="independent"/>
-      <view_node expanded="false" group_name="SW[17..0]" index="0" lsb_to_msb="false" node_type="source" view_type="group_header"/>
+      <view_node expanded="true" group_name="SW[17..0]" index="0" lsb_to_msb="false" node_type="source" view_type="group_header"/>
       <view_node expanded="true" index="17" node_type="source" view_type="group_member"/>
       <view_node expanded="true" index="16" node_type="source" view_type="group_member"/>
       <view_node expanded="true" index="15" node_type="source" view_type="group_member"/>

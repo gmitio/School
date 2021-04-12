@@ -5,8 +5,13 @@ module receiver(
 	input sym_clk_ena,
 	input signed [17:0] signal_in,
 	output [1:0] syms_out_i, syms_out_q,
-	output [35+20:0] accumulated_square_error_i, accumulated_square_error_q
+	output [35+20:0] accumulated_square_error_i, accumulated_square_error_q,
+	input [1:0] ds_del,
+	output reg [17:0] testpoint_3
 );
+
+always @(posedge clk)
+	testpoint_3 <= mixed_down_i;
 	
 
 	
@@ -37,8 +42,8 @@ module receiver(
 	
 
 	wire signed [17:0] downsamp_i, downsamp_q;
-	downsampler downsampler_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(mixed_down_i), .y(downsamp_i) );
-	downsampler downsampler_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(mixed_down_q), .y(downsamp_q) );
+	downsampler downsampler_i( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(mixed_down_i), .y(downsamp_i), .delay(ds_del) );
+	downsampler downsampler_q( .clk(clk), .reset(reset), .sam_clk_ena(sam_clk_ena), .sym_clk_ena(sym_clk_ena), .x_in(mixed_down_q), .y(downsamp_q), .delay(ds_del) );
 	
 	/** Apply matched filter to recover originally transmitted 18 bit signal **/
 	wire signed [17:0] recovered_i, recovered_q;

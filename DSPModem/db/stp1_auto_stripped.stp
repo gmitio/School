@@ -1,4 +1,4 @@
-<session jtag_chain="USB-Blaster [3-3]" jtag_device="@1: 10CL120(Y|Z)/EP3C120/.. (0x020F70DD)" sof_file="../output_files/modem_testbench.sof">
+<session jtag_chain="USB-Blaster [3-1]" jtag_device="@1: 10CL120(Y|Z)/EP3C120/.. (0x020F70DD)" sof_file="../output_files/modem_testbench.sof">
   <display_tree gui_logging_enabled="0">
     <display_branch instance="auto_signaltap_0" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
   </display_tree>
@@ -1454,10 +1454,11 @@
         <trigger_in_editor/>
         <trigger_out_editor/>
       </presentation>
-      <trigger CRC="3BA3F22C" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2021/04/11 13:13:10  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
+      <trigger CRC="3BA3F22C" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2021/04/11 13:13:10  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_type="circular">
         <power_up_trigger position="pre" storage_qualifier_disabled="no"/>
         <events use_custom_flow_control="no">
-          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+          <level enabled="yes" name="condition1" type="basic">
+            <power_up enabled="yes">
             </power_up><op_node/>
           </level>
         </events>
@@ -1493,6 +1494,7 @@
       <single attribute="zoom level numerator" value="512"/>
       <single attribute="zoom offset denominator" value="1"/>
       <single attribute="zoom offset numerator" value="52"/>
+      <multi attribute="timebars" size="1" value="1018"/>
     </position_info>
   </instance>
   <mnemonics/>
